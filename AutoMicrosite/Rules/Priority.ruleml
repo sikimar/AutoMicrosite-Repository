@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RuleML xmlns="http://ruleml.org/spec">
+	<Assert mapClosure="universal">
+
+		<!-- Default to 0 -->
+		<Implies>
+			<if>
+				<And>
+					<Atom>
+						<Rel>http://deepweb.ut.ee/automicrosite/widget</Rel>
+						<Var>widget</Var>
+					</Atom>
+					<Naf>
+						<Atom>
+							<Rel>http://deepweb.ut.ee/#priority</Rel>
+							<slot><Ind>widget</Ind><Var>widget</Var></slot>
+							<slot><Ind>priority</Ind><Var>x</Var></slot>
+						</Atom>
+					</Naf>
+				</And>
+			</if>
+			<then>
+				<Atom>
+					<Rel>http://deepweb.ut.ee/#priority2</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>priority</Ind><Ind>0</Ind></slot>
+				</Atom>
+			</then>
+		</Implies>
+
+		<!-- TODO: select the best priority -->
+		<Implies>
+			<if>
+				<Atom>
+					<Rel>http://deepweb.ut.ee/#priority</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>priority</Ind><Var>priority</Var></slot>
+				</Atom>
+			</if>
+			<then>
+				<Atom>
+					<Rel>http://deepweb.ut.ee/#priority2</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>priority</Ind><Var>priority</Var></slot>
+				</Atom>
+			</then>
+		</Implies>
+
+		<Implies>
+			<if>
+				<Atom>
+					<Rel>http://openajax.org/metadata#category</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>category</Ind><Ind>http://schema.org/MediaObject</Ind></slot>
+				</Atom>
+			</if>
+			<then>
+				<Atom>
+					<Rel>http://deepweb.ut.ee/#priority</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>priority</Ind><Ind>10</Ind></slot>
+				</Atom>
+			</then>
+		</Implies>
+
+		<Implies>
+			<if>
+				<Atom>
+					<Rel>http://openajax.org/metadata#category</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>category</Ind><Ind>http://schema.org/Map</Ind></slot>
+				</Atom>
+			</if>
+			<then>
+				<Atom>
+					<Rel>http://deepweb.ut.ee/#priority</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>priority</Ind><Ind>10</Ind></slot>
+				</Atom>
+			</then>
+		</Implies>
+
+		<Implies>
+			<if>
+				<Atom>
+					<Rel>http://openajax.org/metadata#category</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>category</Ind><Ind>http://schema.org/Table</Ind></slot>
+				</Atom>
+			</if>
+			<then>
+				<Atom>
+					<Rel>http://deepweb.ut.ee/#priority</Rel>
+					<slot><Ind>widget</Ind><Var>widget</Var></slot>
+					<slot><Ind>priority</Ind><Ind>1</Ind></slot>
+				</Atom>
+			</then>
+		</Implies>
+
+	</Assert>
+
+</RuleML>

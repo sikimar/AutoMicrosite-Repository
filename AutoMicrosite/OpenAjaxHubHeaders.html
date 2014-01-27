@@ -1,0 +1,29 @@
+<script type="text/javascript" src="js/pagebus.js"></script>
+<script type="text/javascript">
+var AM_DEBUG = true;
+if (!console) {
+	var console = {log: function() {}, error: function(message) { alert(e); }};
+}
+
+var dojoConfig = {
+    baseUrl: "js/",
+    tlmSiblingOfDojo: false,
+    packages: [
+        { name: "dojo", location: "lib/dojo/" }
+    ]
+};
+oaaLoaderConfig = {
+	proxy: "proxy.php"
+};
+</script>
+<script type="text/javascript" data-dojo-config="async: true" src="js/lib/dojo/dojo.js"></script>
+<script type="text/javascript" src="js/loader.js"></script>
+<script type="text/javascript">
+var widgetData = {$widgetData};
+require(["UT/Hans/AutoMicrosite/Mashup", "dojo/ready"], function(Mashup, ready){
+	ready(function() {
+		var mashup = new Mashup("mashup", widgetData);
+		mashup.start();
+	});
+});
+</script>

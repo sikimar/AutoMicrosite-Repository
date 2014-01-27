@@ -1,0 +1,5 @@
+This is the "Automated Rule-Based Selection and Instantiation of Layout Templates for Widget-Based Microsites" application.
+
+REQUIREMENTS:
+PHP 5.3+
+cURL

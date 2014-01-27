@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget name="BusinessRegisterQueryWidget" id="AutoMicrosite/BusinessRegisterQueryWidget"
+		spec="1.0" width="0" height="0" jsClass="AutoMicrosite.BusinessRegisterQuery"
+		xmlns:x="http://deepweb.ut.ee/automicrosite/OpenAjaxMetadataExtension"
+		xmlns="http://openajax.org/metadata"
+		sandbox="true">
+
+	<library name="jQuery" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/" version="1.7.1">
+		<require type="javascript" src="jquery.min.js"/>
+	</library>
+
+	<require type="javascript" src="BusinessRegisterQuery.js"></require>
+
+	<!-- Empty content element is required by the widget loader, somehow it does not work without -->
+	<content src=""><![CDATA[ ]]></content>
+
+	<topic name="AutoMicrosite.BusinessRegister.QueryResponse" type="object" publish="true">
+		<description>
+			Return company code and name in response to a query.
+		</description>
+		<example><![CDATA[
+			{"name": "EVETERM OÜ",
+				"code": 11375683,
+				"registrationCountryCode": "EE",
+				"isLegalEntity": "true"}
+		]]></example>
+		<property name="name" datatype="string" urlparam="http://schema.org/legalName" />
+		<property name="code" datatype="number" urlparam="https://www.inforegister.ee/onto/business/2013/r1/registrationCode" />
+		<property name="registrationCountryCode" datatype="string" urlparam="https://www.inforegister.ee/onto/business/2013/r1/registrationCountryCode" />
+		<property name="isLegalEntity" datatype="string" urlparam="https://www.inforegister.ee/onto/business/2013/r1/isLegalEntity" />
+	</topic>
+
+	<property name="name" datatype="string" urlparam="http://schema.org/legalName" required="true" defaultValue="EVETERM OÜ"/>
+
+	<categories>
+		<category x:iri="http://deepweb.ut.ee/Datasets" />
+    </categories>
+
+</widget>
