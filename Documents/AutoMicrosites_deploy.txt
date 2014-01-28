@@ -1,0 +1,13 @@
+AutoMicrosite install:
+
+1) Paki lahti AutoMicrosite failid - https://codeload.github.com/hansm/Automated-generation-of-microsites/zip/master
+2) Installi Eclipse Kepler http://eclipse.dcc.fc.up.pt/technology/epp/downloads/release/kepler/SR1/eclipse-standard-kepler-SR1-win32.zip
+3) Installi LightPTD http://en.wlmp-project.net/downloads/LightTPD-1.4.32-1-IPv6-Win32-SSL.exe
+3.1) Muuda serveri port conf failis. conf/lighttpd.conf --> server.port = 81
+4) Installi WampServer http://heanet.dl.sourceforge.net/project/wampserver/WampServer%202/Wampserver%202.4/Wampserver2.4-x86.exe
+5) Installi GlassFish http://download.oracle.com/otn-pub/java/java_ee_sdk/6u4/ogs-3.1.2-windows.exe?AuthParam=1381351386_0afec776703a3b35fec23f51f3fb8632
+5.1) Start glassfish4\bin\asadmin start-domain
+5.2) Load Console http://localhost:4848
+6) Installi GlassFish Tools for Kepler läbi Eclipse Marketplace'i.
+7) Ava Eclipse ja tee uus PHP project. Dialogi aknas vali "Create project at existing location". Kaustaks vali lahti pakitud AutoMicrosite kaust. Eclipse teeb projectifaili ja avab kaustad.
+8) 
